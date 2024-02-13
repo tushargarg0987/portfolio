@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaBriefcase, FaBuilding, FaRegCalendarAlt } from "react-icons/fa";
-import { FaBuildingColumns, FaLocationDot } from "react-icons/fa6";
+import { FaBuildingColumns, FaGraduationCap, FaLocationDot } from "react-icons/fa6";
 
 const ExpCarousel = ({ experiences }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,7 +30,7 @@ const ExpCarousel = ({ experiences }) => {
                                     <div className=' col-span-2 bg-[#27C765] rounded-lg flex flex-col items-start px-6 py-8 gap-6'>
                                         <h1 className='text-slate-50 text-3xl font-semibold'>{experience.position}</h1>
                                         <h1 className='text-slate-50 text-2xl font-semibold flex items-center gap-3'><FaRegCalendarAlt /> {experience.duration}</h1>
-                                        <h1 className='text-slate-50 text-2xl font-semibold flex items-center gap-3'><FaBriefcase /> {experience.type}</h1>
+                                        <h1 className='text-slate-50 text-2xl font-semibold flex items-center gap-3'>{experience.edu ?<FaGraduationCap /> : <FaBriefcase />} {experience.type}</h1>
                                         <h1 className='text-slate-50 text-2xl font-semibold flex items-center gap-3'><FaBuildingColumns /> {experience.company}</h1>
                                         <h1 className='text-slate-50 text-2xl font-semibold flex items-center gap-3'><FaLocationDot /> {experience.location}</h1>
                                     </div>
@@ -43,7 +43,7 @@ const ExpCarousel = ({ experiences }) => {
                                         </ul>
                                         <h1 className='text-slate-50 text-2xl font-semibold flex items-center gap-3 mb-2'>Description :</h1>
                                         <p className='text-left text-gray-300 text-xl mb-6'>{ experience.desc}</p>
-                                        <h1 className='text-slate-50 text-2xl font-semibold flex items-center gap-3 my-2'>Tech Stack :</h1>
+                                        <h1 className='text-slate-50 text-2xl font-semibold flex items-center gap-3 my-2'>{experience.edu ? "Subjects :":"Tech Stack :"}</h1>
                                         <div className='flex gap-2 flex-wrap'>
                                             {experience.stack.map((tech) => {
                                                 return <p className='text-md text-slate-800 bg-slate-300 px-3 font-semibold rounded-full'>{tech}</p>
@@ -55,7 +55,7 @@ const ExpCarousel = ({ experiences }) => {
                         ))}
                     </div>
                 </div>
-                <button
+                {currentIndex > 0 && <button
                     className="absolute top-1/2 left-4 transform -translate-y-1/2 -translate-x-[150%] text-white px-3 rounded-full focus:outline-none"
                     onClick={goToPrevSlide}
                 >
@@ -83,8 +83,8 @@ const ExpCarousel = ({ experiences }) => {
                     </svg>
 
 
-                </button>
-                <button
+                </button>}
+                {currentIndex < experiences.length - 1 && <button
                     className="absolute top-1/2 right-4 transform -translate-y-1/2 translate-x-[150%] text-white  px-3 py-1 rounded-full focus:outline-none"
                     onClick={goToNextSlide}
                 >
@@ -110,7 +110,7 @@ const ExpCarousel = ({ experiences }) => {
                             />{" "}
                         </g>
                     </svg>
-                </button>
+                </button>}
                 <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                     {experiences.map((_, index) => (
                         <button

@@ -28,36 +28,39 @@ function ExperiencePage() {
                     </div>
                 </div> */}
                 <div className="flex justify-center">
-                <div className="relative w-full mt-5 h-10 bg-[#1A232C] rounded-full max-w-[300px]" >
+                <div className="relative w-full mt-5 h-10 bg-[#1A232C] rounded-full max-w-[320px]" >
                     <div className="relative w-full h-full flex items-center">
                         <div
                             onClick={() => { changeSelection(!selection) }}
                             className="w-full flex justify-center text-gray-400 cursor-pointer"
                         >
-                            <button>Experience</button>
+                            <button className="text-md font-semibold">Experience</button>
                         </div>
                         <div
                             onClick={() => { changeSelection(!selection) }}
                             className="w-full flex justify-center text-gray-400 cursor-pointer"
                         >
-                            <button>Education</button>
+                            <button className="text-md font-semibold">Education</button>
                         </div>
                         <span
                         className={`${selection
-                                ? "left-1 text-white font-semibold"
-                                : "left-1/2 -ml-1 text-white"
-                            } shadow text-sm flex items-center justify-center h-[100%] transition-all duration-150 ease-linear top-[6px] absolute bg-[#27C765] -m-[6px] rounded-full w-[60%]`}
+                                ? "left-1 font-semibold"
+                                : "left-1/2 -ml-1"
+                            } shadow flex items-center justify-center h-[100%] transition-all duration-150 ease-linear top-[6px] absolute bg-[#27C765] -m-[6px] rounded-full w-[55%] text-md font-semibold text-slate-50`}
                     >
                         {selection ? "Experience" : "Education"}
                     </span>
                     </div>
                 </div>
                 </div>
-                <ExpCarousel experiences={[
-                    { position: "MERN Stack Developer", type: "Internship", duration: "Aug, 2023 - Feb, 2024", company: "Snive Technologies", location: 'Remote', stack: ["Reactjs", "Tailwind CSS", "Redux", "Nodejs", "MongoDB", "Figma", "Express.js"], wd: [`<p>Brand website i.e. <a target='_blank' href='https://www.snive.io/' class=' text-[#27C765]'>snive.io</a></p>`, `<p>Some more tools</p>`], desc: 'Developed the complete website for the company and also worked on various other tools and products.' },
-                    { position: "Backend Developer", type: "Internship", duration: "June, 2023 - July, 2023", company: "The Intern Bay", location: 'Remote', stack: [], wd: [], desc: '' }
+                {selection ? <ExpCarousel experiences={[
+                    { position: "MERN Stack Developer", type: "Internship", duration: "Aug, 2023 - Feb, 2024", company: "Snive Technologies", location: 'Remote', stack: ["Reactjs", "Tailwind CSS", "Redux", "Nodejs", "MongoDB", "Figma", "Express.js"], wd: [`<p>Brand website i.e. <a target='_blank' href='https://www.snive.io/' class=' text-[#27C765]'>snive.io</a></p>`, `<p>Some more tools</p>`], desc: 'Developed the complete website for the company and also worked on various other tools and products.', edu: false },
+                    { position: "Backend Developer", type: "Internship", duration: "June, 2023 - July, 2023", company: "The Intern Bay", location: 'Remote', stack: ["Nodejs", "JavaScript", "Express.js", "Socket.io", "MongoDB", "UUID", "Bcrypt", "Passport"], wd: [`<p>Developed complete backend for Edutech platform</p>`, `<p>Created live chat feature</p>`, `<p>Managed database schemas</p>`], desc: 'Developed a backend API for the App and Website for an Edutech platform which included referral system along with live chat functionality', edu: false }
                     ]}
-                />
+                /> : <ExpCarousel experiences={[
+                    { position: "Computer Science", type: "B.Tech", duration: "2021 - 2025", company: "IIIT Una", location: 'Una, Himachal Pradesh', stack: ["Computer Networks", "DSA", "DAA", "Operating System", "Automata", "Software Engineering", "Computational tools", "Mobile Application Development"], wd: [`<p>Studied the fundamentals of Computer Science</p>`, `<p>Developed industry specific skillset</p>`], desc: 'Developed the complete website for the company and also worked on various other tools and products.', edu: true },
+                    { position: "Backend Developer", type: "Internship", duration: "June, 2023 - July, 2023", company: "The Intern Bay", location: 'Remote', stack: ["Nodejs", "JavaScript", "Express.js", "Socket.io", "MongoDB", "UUID", "Bcrypt", "Passport"], wd: [`<p>Developed complete backend for Edutech platform</p>`, `<p>Created live chat feature</p>`, `<p>Managed database schemas</p>`], desc: 'Developed a backend API for the App and Website for an Edutech platform which included referral system along with live chat functionality', edu: true }
+                ]} />}
             </section>
         </div>
     )
