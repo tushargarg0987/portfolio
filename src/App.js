@@ -15,7 +15,7 @@ function App() {
         {/* <h1 className="text-3xl font-bold underline">
           Hello world!
         </h1> */}
-        <h1 className='text-white'>Tushar</h1>
+        <a href='#home-div'><h1 className='text-white'>Tushar</h1></a>
         <div className='h-full flex items-center w-full justify-center'>
           <div className='flex flex-col justify-center gap-20'>
             <a href='#home-div'><h3 className='rotated-text home-div hover:text-[#27C765]'>Home</h3></a>

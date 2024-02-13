@@ -28,7 +28,7 @@ function ExperiencePage() {
                     </div>
                 </div> */}
                 <div className="flex justify-center">
-                <div className="relative w-full mt-5 h-10 bg-[#1A232C] rounded-full max-w-[320px]" >
+                <div className="relative w-full h-10 bg-[#1A232C] rounded-full max-w-[320px]" >
                     <div className="relative w-full h-full flex items-center">
                         <div
                             onClick={() => { changeSelection(!selection) }}
@@ -58,8 +58,8 @@ function ExperiencePage() {
                     { position: "Backend Developer", type: "Internship", duration: "June, 2023 - July, 2023", company: "The Intern Bay", location: 'Remote', stack: ["Nodejs", "JavaScript", "Express.js", "Socket.io", "MongoDB", "UUID", "Bcrypt", "Passport"], wd: [`<p>Developed complete backend for Edutech platform</p>`, `<p>Created live chat feature</p>`, `<p>Managed database schemas</p>`], desc: 'Developed a backend API for the App and Website for an Edutech platform which included referral system along with live chat functionality', edu: false }
                     ]}
                 /> : <ExpCarousel experiences={[
-                    { position: "Computer Science", type: "B.Tech", duration: "2021 - 2025", company: "IIIT Una", location: 'Una, Himachal Pradesh', stack: ["Computer Networks", "DSA", "DAA", "Operating System", "Automata", "Software Engineering", "Computational tools", "Mobile Application Development"], wd: [`<p>Studied the fundamentals of Computer Science</p>`, `<p>Developed industry specific skillset</p>`], desc: 'Developed the complete website for the company and also worked on various other tools and products.', edu: true },
-                    { position: "Backend Developer", type: "Internship", duration: "June, 2023 - July, 2023", company: "The Intern Bay", location: 'Remote', stack: ["Nodejs", "JavaScript", "Express.js", "Socket.io", "MongoDB", "UUID", "Bcrypt", "Passport"], wd: [`<p>Developed complete backend for Edutech platform</p>`, `<p>Created live chat feature</p>`, `<p>Managed database schemas</p>`], desc: 'Developed a backend API for the App and Website for an Edutech platform which included referral system along with live chat functionality', edu: true }
+                    { position: "Computer Science", type: "B.Tech", duration: "2021 - 2025", company: "IIIT Una", location: 'Una, Himachal Pradesh', stack: ["Computer Networks", "DSA", "DAA", "Operating System", "Automata", "Software Engineering", "Computational tools", "Mobile Application Development"], wd: [`<p>Studied the fundamentals of Computer Science</p>`, `<p>Developed industry specific skillset</p>`], desc: 'Developed a basic knowledge of computer fundamentals and an industry level skillset along with never lasting connections.', edu: true },
+                    { position: "Non Medical", type: "Post Metric", duration: "2020 - 2021", company: "Vasant Valley School", location: 'Ladda, Sangrur, Punjab', stack: ["Physics", "Chemistry", "Maths"], wd: [`<p>Studied basics of Physics, Chemistry & Maths </p>`, `<p>JEE preperation</p>`], desc: 'Developed a basic knowledge of Physics, Chemistry & Maths and prepared for the JEE examination', edu: true }
                 ]} />}
             </section>
         </div>
