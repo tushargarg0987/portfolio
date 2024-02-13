@@ -3,7 +3,7 @@ import ExpCarousel from "./experience/ExpCarousel"
 import ExpItem from "./experience/ExpItem"
 
 function ExperiencePage() {
-    const [selection, changeSelection] = useState(0);
+    const [selection, changeSelection] = useState(1);
     return (
         <div>
             <section className='sc-page bg-[#0F161C] py-10' id="exp-div">
